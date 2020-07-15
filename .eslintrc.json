@@ -1,0 +1,32 @@
+{
+    "env": {
+        "browser": true,
+        "es2020": true
+    },
+    "extends": [
+        "airbnb-base",
+        "eslint:recommended",
+        "plugin:prettier/recommended"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 11,
+        "sourceType": "module"
+    },
+    "rules": {
+        "prettier/prettier": [
+            "error",
+            {
+                "singleQuote": true,
+                "trailingComma": "es5"
+            }
+        ]
+    },
+    "overrides": [
+        {
+            "files": ["./index.js"],
+            "rules": {
+                "no-unused-expressions": "off"
+            }
+        }
+    ]
+}
