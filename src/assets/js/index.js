@@ -1,4 +1,6 @@
-import timer from './component/timer';
+import timer from './component/_timer';
 import '../scss/style.scss';
 
-timer();
+window.addEventListener('load', () => {
+  timer();
+});

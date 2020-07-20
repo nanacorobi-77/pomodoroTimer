@@ -17,6 +17,7 @@ module.exports = {
   output: { path: PATH.resolve(__dirname, 'dist'), filename: 'main.js' },
   devServer: {
     contentBase: 'dist',
+    port: 9002,
     open: true,
   },
   module: {

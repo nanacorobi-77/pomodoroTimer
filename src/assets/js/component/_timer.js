@@ -19,17 +19,24 @@ const timer = () => {
   };
 
   const goal = new Date();
-  goal.setMinutes(59);
+  goal.setMinutes(24);
   goal.setSeconds(59);
 
-  console.log(countdown(goal));
+  const recalc = () => {
+    const counter = countdown(goal);
+    const time = `${counter[0]}:${counter[1]}`;
+    document.querySelector('[data-js ="time"]').textContent = time;
+    if (counter >= 0) {
+      // eslint-disable-next-line no-use-before-define
+      refresh();
+    }
+  };
 
-  const counter = countdown(goal);
-  const time = `${counter[0]}:${counter[1]}`;
-  console.log(time);
-  // document.querySelector('[data-js="carousel_next"]')
-  console.log(document.getElementById('time'));
+  const refresh = () => {
+    // eslint-disable-next-line no-use-before-define
+    setTimeout(recalc, 1000);
+  };
 
-  document.querySelector('[data-js ="time"]').textContent = time;
+  recalc();
 };
 export default timer;
